@@ -1,0 +1,27 @@
+{
+  "name": "geo-quiz",
+  "version": "1.0.0",
+  "repository": "https://github.com/optimusjr/projetos.git",
+  "author": "OPTIMUS Jr. <contato@optimusjr.com.br>",
+  "license": "Unlicense",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.0",
+    "@types/react": "^18.0.38",
+    "eslint-config-silash35": "^2.0.1",
+    "sass": "^1.62.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "next": "^13.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "socket.io-client": "^4.6.1"
+  }
+}
