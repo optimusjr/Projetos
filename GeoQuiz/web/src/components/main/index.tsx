@@ -5,12 +5,14 @@ import styles from "./main.module.scss";
 
 let socket: Socket;
 
-const Start = () => {
-  const [list, setList] = useState([] as string[]);
+interface Competitor {
+  id: number;
+  name: string;
+  time: Date;
+}
 
-  useEffect(() => {
-    socketInitializer();
-  }, []);
+const Start = () => {
+  const [podium, setPodium] = useState([] as Competitor[]);
 
   const socketInitializer = async () => {
     socket = io("http://localhost:4000");
@@ -18,21 +20,49 @@ const Start = () => {
     socket.on("connect", () => {
       console.log("connected");
     });
+  };
 
-    socket.on("data", (text) => {
-      console.log(text);
-      list.push(text);
-      setList(list);
+  const resetSocketListeners = async () => {
+    socket.off("data");
+    socket.on("data", (msg) => {
+      addToPodium(msg);
     });
   };
+
+  useEffect(() => {
+    if (socket === undefined) {
+      socketInitializer();
+    }
+    resetSocketListeners();
+  }, []);
+
+  if (socket !== undefined) {
+    resetSocketListeners;
+  }
+
+  const addToPodium = (msg: string) => {
+    console.log(msg);
+    setPodium([
+      ...podium,
+      {
+        id: podium.length,
+        name: msg,
+        time: new Date(),
+      },
+    ]);
+  };
+
+  console.log("Atualizou estado");
 
   return (
     <main className={styles.main}>
       <h1>Leve o futuro para o seu lar.</h1>
       <p>Transformamos sua casa com as nossas soluções de automação residencial.</p>
 
-      {list.map((item, index) => (
-        <li key={index}> {item}</li>
+      {podium.map((competitor) => (
+        <li key={competitor.id}>
+          {competitor.name} {competitor.id} {competitor.time.getSeconds()}
+        </li>
       ))}
     </main>
   );
