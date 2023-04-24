@@ -11,8 +11,11 @@ const Start = () => {
   }, []);
 
   const socketInitializer = async () => {
-    await fetch("/api/socket");
-    socket = io();
+    console.log("bbbbbbbbbb");
+
+    socket = io("http://localhost:3000", {
+      path: "/api/socket",
+    });
 
     socket.on("connect", () => {
       console.log("connected");
