@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { io, Socket } from "socket.io-client";
 
-import styles from "./main.module.scss";
-
 let socket: Socket;
 
 interface Competitor {
@@ -52,12 +50,9 @@ const Start = () => {
     ]);
   };
 
-  console.log("Atualizou estado");
-
   return (
-    <main className={styles.main}>
+    <main>
       <h1>Leve o futuro para o seu lar.</h1>
-      <p>Transformamos sua casa com as nossas soluções de automação residencial.</p>
 
       {podium.map((competitor) => (
         <li key={competitor.id}>

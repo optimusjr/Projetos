@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import Header from "@/components/header";
 import Main from "@/components/main";
 
 const Home = () => {
@@ -9,6 +9,7 @@ const Home = () => {
         <title>GeoQuiz</title>
       </Head>
 
+      <Header />
       <Main />
     </>
   );
