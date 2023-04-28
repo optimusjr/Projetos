@@ -1,8 +1,16 @@
+import { GlobeAmericasIcon } from "@heroicons/react/24/outline";
+
 const Header = () => {
   return (
-    <header>
-      <h1>Leve o futuro para o seu lar.</h1>
-      <p>Transformamos sua casa com as nossas soluções de automação residencial.</p>
+    <header className="bg-gray-800">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center">
+          <GlobeAmericasIcon className="h-8 w-8 text-white" />
+          <div className="ml-10 flex items-baseline space-x-4 ">
+            <h1 className="text-xl font-bold text-white ">GeoQuiz</h1>
+          </div>
+        </div>
+      </div>
     </header>
   );
 };

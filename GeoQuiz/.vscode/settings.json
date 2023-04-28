@@ -1,5 +1,9 @@
 {
-  "cSpell.words": [
-    "OPTIMUS"
-  ]
+  "cSpell.words": ["OPTIMUS", "tailwindcss"],
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  }
 }

@@ -1,4 +1,0 @@
-$browser-default-size: 16;
-@function rem($pixels) {
-  @return #{$pixels/$browser-default-size}rem;
-}
