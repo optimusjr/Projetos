@@ -31,7 +31,7 @@ export default class MyDocument extends Document {
             property="og:description"
           />
         </Head>
-        <body className="min-h-full bg-white text-slate-500">
+        <body className="bg-white text-slate-500">
           <Main />
           <NextScript />
         </body>

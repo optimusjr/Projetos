@@ -1,3 +1,4 @@
+import CompetitorCard from "@/components/competitorCard";
 import { useEffect, useState } from "react";
 import { io, Socket } from "socket.io-client";
 
@@ -9,7 +10,7 @@ interface Competitor {
   time: Date;
 }
 
-const Start = () => {
+const Main = () => {
   const [podium, setPodium] = useState([] as Competitor[]);
 
   const socketInitializer = async () => {
@@ -51,16 +52,28 @@ const Start = () => {
   };
 
   return (
-    <main className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-      <h1>Leve o futuro para o seu lar.</h1>
-
+    <main className="flex min-h-[calc(100vh_-_64px)] items-center justify-center bg-slate-200 p-8">
       {podium.map((competitor) => (
         <li key={competitor.id}>
           {competitor.name} {competitor.id} {competitor.time.getSeconds()}
         </li>
       ))}
+
+      <div className="m-4 flex-col rounded-lg bg-white shadow-lg">
+        <h2 className="m-6 text-center text-2xl font-semibold uppercase text-gray-900">
+          Classificação
+        </h2>
+        <CompetitorCard />
+        <CompetitorCard />
+        <CompetitorCard />
+        <CompetitorCard />
+
+        <button className="mx-auto my-6 flex justify-center rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
+          Resetar
+        </button>
+      </div>
     </main>
   );
 };
 
-export default Start;
+export default Main;

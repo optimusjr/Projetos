@@ -19,7 +19,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
       </Head>
 
-      <div className={inter.className}>
+      <div className={inter.className + " contents"}>
         <Component {...pageProps} />
       </div>
     </>
