@@ -41,10 +41,19 @@ const CompetitorCard = ({ name, setName, podium, competitor, competidorPosition 
     ":" +
     padNumber(timer.getMilliseconds());
 
+  const textColor =
+    competidorPosition === 0
+      ? "text-yellow-500"
+      : competidorPosition === 1
+      ? "text-zinc-500"
+      : competidorPosition === 2
+      ? "text-yellow-800"
+      : "text-gray-300";
+
   return (
     <div className="m-6 flex  rounded-lg bg-white shadow-lg">
-      <div className="grid w-60 grid-cols-[theme(spacing.12)_1fr] gap-4 px-4 py-6 sm:w-72">
-        <TrophyIcon className="h-12 w-12 object-cover text-orange-400" />
+      <div className="grid w-60 grid-cols-[theme(spacing.12)_1fr] gap-4 px-4 py-6 sm:w-72 lg:w-96">
+        <TrophyIcon className={"h-12 w-12 " + textColor} />
         <div>
           <div className="flex items-center justify-between">
             {isEditing ? (

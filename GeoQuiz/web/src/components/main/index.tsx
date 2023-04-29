@@ -1,6 +1,7 @@
 import CompetitorCard from "@/components/competitorCard";
 import usePodium from "@/hooks/usePodium";
 import { useState } from "react";
+import { ArchiveBoxXMarkIcon } from "@heroicons/react/24/outline";
 
 const Main = () => {
   const { podium, reset } = usePodium();
@@ -32,6 +33,13 @@ const Main = () => {
             setName={setName}
           />
         ))}
+
+        {podium.length === 0 && (
+          <div className="w-60 sm:w-72 lg:w-96">
+            <ArchiveBoxXMarkIcon className="rotate-180 px-24 sm:px-32 lg:px-40" />
+            <p className="px-8 text-center sm:px-16">Nenhum botão apertado</p>
+          </div>
+        )}
 
         <button
           onClick={reset}
