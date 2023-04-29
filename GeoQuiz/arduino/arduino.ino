@@ -4,6 +4,12 @@ void setup() {
 }
 
 void loop() {
-  Serial.println("Hello world!");
-  delay(2000);
+  Serial.println("c-0");
+  delay(500);
+  Serial.println("c-1");
+  delay(500);
+  Serial.println("c-2");
+  delay(500);
+  Serial.println("c-3");
+  delay(500);
 }
