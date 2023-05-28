@@ -7,23 +7,23 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "start": "concurrently -k \"cd ../server && pnpm start\" \"next dev\"",
     "lint": "next lint"
   },
   "devDependencies": {
-    "@types/node": "^18.16.2",
-    "@types/react": "^18.2.0",
+    "@types/node": "^20.2.5",
+    "@types/react": "^18.2.7",
     "autoprefixer": "^10.4.14",
     "eslint-config-silash35": "^2.0.1",
     "postcss": "^8.4.23",
-    "prettier-plugin-tailwindcss": "^0.2.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.17",
-    "next": "^13.3.1",
+    "@heroicons/react": "^2.0.18",
+    "concurrently": "^8.0.1",
+    "next": "^13.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "socket.io-client": "^4.6.1"

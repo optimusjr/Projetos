@@ -6,6 +6,7 @@ let socket: Socket;
 
 const usePodium = () => {
   const [podium, setPodium] = useState([] as Competitor[]);
+  let buzzer: HTMLAudioElement;
 
   const socketInitializer = async () => {
     socket = io("http://localhost:4000");
@@ -33,6 +34,8 @@ const usePodium = () => {
   };
 
   useEffect(() => {
+    buzzer = new Audio("buzzer.mp3");
+
     if (socket === undefined) {
       socketInitializer();
     }
@@ -53,6 +56,10 @@ const usePodium = () => {
           id: competitorId,
           time: new Date().getTime(),
         };
+
+        if (podium.length === 0) {
+          buzzer.play();
+        }
 
         return [...podium, newCompetitor];
       }
