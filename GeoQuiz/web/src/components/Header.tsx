@@ -1,4 +1,4 @@
-import Button from "@/components/button";
+import Button from "./Button";
 import { GlobeAmericasIcon } from "@heroicons/react/24/outline";
 
 const Header = () => {
@@ -15,7 +15,7 @@ const Header = () => {
           <div className="ml-4 flex items-baseline space-x-4 ">
             <h1 className="text-xl font-bold text-white ">GeoQuiz</h1>
           </div>
-          <Button onClick={reset} className="mr-0">
+          <Button onClick={reset} color="red" className="mr-0">
             Resetar
           </Button>
         </div>

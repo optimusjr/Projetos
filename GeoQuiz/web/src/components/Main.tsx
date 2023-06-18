@@ -1,5 +1,5 @@
-import Button from "@/components/button";
-import CompetitorCard from "@/components/competitorCard";
+import Button from "./Button";
+import CompetitorCard from "./CompetitorCard";
 import { useLocalStorage } from "usehooks-ts";
 import usePodium from "@/hooks/usePodium";
 import { ArchiveBoxXMarkIcon } from "@heroicons/react/24/outline";
@@ -47,7 +47,9 @@ const Main = () => {
           </div>
         )}
 
-        <Button onClick={restart}>Reiniciar</Button>
+        <Button onClick={restart} color="blue">
+          Reiniciar
+        </Button>
       </div>
     </main>
   );
