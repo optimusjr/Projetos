@@ -1,11 +1,17 @@
+import Button from "@/components/button";
 import CompetitorCard from "@/components/competitorCard";
+import { useLocalStorage } from "usehooks-ts";
 import usePodium from "@/hooks/usePodium";
-import { useState } from "react";
 import { ArchiveBoxXMarkIcon } from "@heroicons/react/24/outline";
 
 const Main = () => {
-  const { podium, reset } = usePodium();
-  const [names, setNames] = useState(["Equipe 1", "Equipe 2", "Equipe 3", "Equipe 4"]);
+  const { podium, restart } = usePodium();
+  const [names, setNames] = useLocalStorage("teamNames", [
+    "Equipe 1",
+    "Equipe 2",
+    "Equipe 3",
+    "Equipe 4",
+  ]);
 
   const setName = (competidorId: number, newName: string) => {
     if (competidorId >= 0 && competidorId <= 3) {
@@ -41,12 +47,7 @@ const Main = () => {
           </div>
         )}
 
-        <button
-          onClick={reset}
-          className="mx-auto my-6 flex justify-center rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
-        >
-          Resetar
-        </button>
+        <Button onClick={restart}>Reiniciar</Button>
       </div>
     </main>
   );

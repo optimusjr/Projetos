@@ -25,10 +25,6 @@ const usePodium = () => {
         if (competitorId <= 3) {
           addToPodium(+msg[2]);
         }
-
-        if (podium.length > 5) {
-          reset();
-        }
       }
     });
   };
@@ -66,13 +62,13 @@ const usePodium = () => {
     });
   };
 
-  const reset = () => {
+  const restart = () => {
     setPodium([]);
   };
 
   return {
     podium,
-    reset,
+    restart,
   };
 };
 
