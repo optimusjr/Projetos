@@ -11,22 +11,22 @@
     "lint": "next lint"
   },
   "devDependencies": {
-    "@types/node": "^20.2.5",
-    "@types/react": "^18.2.7",
+    "@types/node": "^20.4.2",
+    "@types/react": "^18.2.15",
     "autoprefixer": "^10.4.14",
     "eslint-config-silash35": "^2.0.1",
-    "postcss": "^8.4.23",
-    "prettier-plugin-tailwindcss": "^0.3.0",
-    "tailwindcss": "^3.3.2",
-    "typescript": "^5.0.4"
+    "postcss": "^8.4.26",
+    "prettier-plugin-tailwindcss": "^0.4.0",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.1.6"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
-    "concurrently": "^8.0.1",
-    "next": "^13.4.4",
+    "concurrently": "^8.2.0",
+    "next": "^13.4.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "socket.io-client": "^4.6.1",
+    "socket.io-client": "^4.7.1",
     "usehooks-ts": "^2.9.1"
   }
 }
