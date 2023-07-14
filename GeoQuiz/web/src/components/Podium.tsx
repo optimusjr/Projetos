@@ -28,9 +28,7 @@ const Podium = ({ podium, restart }: Props) => {
 
   return (
     <div className="flex flex-col px-1 min-h-[600px]">
-      <h2 className="m-6 text-center text-2xl font-semibold uppercase text-gray-900">
-        Classificação
-      </h2>
+      <h2 className="m-6 text-center text-2xl font-semibold text-gray-900">Quem tem a palavra?</h2>
 
       {podium.map((competitor, position) => (
         <CompetitorCard

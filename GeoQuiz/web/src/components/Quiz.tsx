@@ -5,19 +5,19 @@ import Button from "@/components/Button";
 import Alternative from "@/components/Alternative";
 
 interface Props {
-  podium: Competitor[];
+  removeFirstPlace: () => void;
 }
 
-const Quiz = ({ podium }: Props) => {
+const Quiz = ({ removeFirstPlace }: Props) => {
   const { currentQuestion, goToNextQuestion, isEnd } = useQuiz();
 
   return (
-    <div className="flex flex-col px-1 w-full">
-      <h2 className="m-6 text-center text-2xl font-semibold uppercase text-gray-900 w-128">
-        Perguntas
+    <div className="flex flex-col px-1 w-128">
+      <h2 className="m-6 text-center text-2xl w-full font-semibold text-gray-900">
+        Qual a Pergunta?
       </h2>
 
-      <div className="flex flex-col items-center h-full">
+      <div className="flex flex-col mx-6 items-center h-full">
         {!isEnd ? (
           <>
             <h3 className="m-2 w-full text-xl font-semibold text-gray-900">
@@ -30,6 +30,7 @@ const Quiz = ({ podium }: Props) => {
                   key={alternative}
                   alternative={alternative}
                   isRight={index === currentQuestion.right_answer}
+                  removeFirstPlace={removeFirstPlace}
                 />
               ))}
             </ol>

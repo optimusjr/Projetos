@@ -62,6 +62,12 @@ const usePodium = () => {
     });
   };
 
+  const removeFirstPlace = () => {
+    if (podium.shift()) {
+      setPodium(podium);
+    }
+  };
+
   const restart = () => {
     setPodium([]);
   };
@@ -69,6 +75,7 @@ const usePodium = () => {
   return {
     podium,
     restart,
+    removeFirstPlace,
   };
 };
 

@@ -10,15 +10,17 @@ enum Status {
 interface Props {
   alternative: string;
   isRight: boolean;
+  removeFirstPlace: () => void;
 }
 
-const Alternative = ({ alternative, isRight }: Props) => {
+const Alternative = ({ alternative, isRight, removeFirstPlace }: Props) => {
   const [status, setStatus] = useState(Status.NEUTRAL);
 
   const clickHandler = () => {
     if (isRight) {
       setStatus(Status.RIGHT);
     } else {
+      removeFirstPlace();
       setStatus(Status.WRONG);
     }
   };
@@ -31,8 +33,8 @@ const Alternative = ({ alternative, isRight }: Props) => {
       : "hover:font-bold";
 
   return (
-    <li key={alternative}>
-      <button className={styleClasses} onClick={clickHandler}>
+    <li key={alternative} className={styleClasses}>
+      <button className="contents" onClick={clickHandler} disabled={status != Status.NEUTRAL}>
         {alternative}
       </button>
     </li>
