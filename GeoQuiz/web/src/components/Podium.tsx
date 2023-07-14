@@ -27,7 +27,7 @@ const Podium = ({ podium, restart }: Props) => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col px-1 w-full">
       <h2 className="m-6 text-center text-2xl font-semibold uppercase text-gray-900">
         Classificação
       </h2>
@@ -44,7 +44,7 @@ const Podium = ({ podium, restart }: Props) => {
       ))}
 
       {podium.length === 0 && (
-        <div className="w-60 sm:w-72 lg:w-96">
+        <div className="w-60 sm:w-72 lg:w-96 flex flex-col justify-center h-full">
           <ArchiveBoxXMarkIcon className="w-full rotate-180 px-24 sm:px-28 lg:px-40" />
           <p className="px-8 text-center sm:px-16">Nenhum botão apertado</p>
         </div>

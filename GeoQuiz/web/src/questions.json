@@ -1,0 +1,47 @@
+[
+  {
+    "question": "Pergunta teste",
+    "alternatives": ["Alternativa 1", "Alternativa 2", "Alternativa 3", "Alternativa 4"],
+    "right_answer": 0
+  },
+  {
+    "question": "Qual é a capital da França?",
+    "alternatives": ["Paris", "Lyon", "Marselha", "Toulouse"],
+    "right_answer": 0
+  },
+  {
+    "question": "Qual é o número de planetas do nosso sistema solar?",
+    "alternatives": ["8", "9", "10", "11"],
+    "right_answer": 1
+  },
+  {
+    "question": "Qual é a fórmula da água?",
+    "alternatives": ["H2O", "H2O2", "H2O3", "H2O4"],
+    "right_answer": 0
+  },
+  {
+    "question": "Qual é o nome do planeta mais quente do sistema solar?",
+    "alternatives": ["Mercúrio", "Marte", "Júpiter", "Vênus"],
+    "right_answer": 3
+  },
+  {
+    "question": "Qual é a capital dos Estados Unidos?",
+    "alternatives": ["Washington, D.C.", "Nova York", "Los Angeles", "Chicago"],
+    "right_answer": 0
+  },
+  {
+    "question": "Qual é o nome da capital do Brasil?",
+    "alternatives": ["Rio de Janeiro", "São Paulo", "Brasília", "Salvador"],
+    "right_answer": 2
+  },
+  {
+    "question": "Qual é o nome do presidente atual dos Estados Unidos?",
+    "alternatives": ["Joe Biden", "Donald Trump", "Barack Obama", "George W. Bush"],
+    "right_answer": 0
+  },
+  {
+    "question": "Qual é o nome da maior montanha do mundo?",
+    "alternatives": ["Monte Kilimanjaro", "Monte Elbrus", "Monte K2", "Monte Everest"],
+    "right_answer": 3
+  }
+]
