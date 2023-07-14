@@ -1,8 +1,8 @@
 import { FaceFrownIcon } from "@heroicons/react/24/outline";
-import Competitor from "@/types/competitor";
 import useQuiz from "@/hooks/useQuiz";
 import Button from "@/components/Button";
 import Alternative from "@/components/Alternative";
+import { useEffect, useState } from "react";
 
 interface Props {
   removeFirstPlace: () => void;
@@ -10,6 +10,14 @@ interface Props {
 
 const Quiz = ({ removeFirstPlace }: Props) => {
   const { currentQuestion, goToNextQuestion, isEnd } = useQuiz();
+
+  const [successSound, setSuccessSound] = useState<HTMLAudioElement>();
+  const [failSound, setFailSound] = useState<HTMLAudioElement>();
+
+  useEffect(() => {
+    setSuccessSound(new Audio("success.mp3"));
+    setFailSound(new Audio("fail.mp3"));
+  }, []);
 
   return (
     <div className="flex flex-col px-1 w-128">
@@ -31,6 +39,7 @@ const Quiz = ({ removeFirstPlace }: Props) => {
                   alternative={alternative}
                   isRight={index === currentQuestion.right_answer}
                   removeFirstPlace={removeFirstPlace}
+                  sounds={{ success: successSound, fail: failSound }}
                 />
               ))}
             </ol>

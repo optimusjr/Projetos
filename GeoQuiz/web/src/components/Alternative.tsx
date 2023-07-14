@@ -11,17 +11,23 @@ interface Props {
   alternative: string;
   isRight: boolean;
   removeFirstPlace: () => void;
+  sounds: {
+    success?: HTMLAudioElement;
+    fail?: HTMLAudioElement;
+  };
 }
 
-const Alternative = ({ alternative, isRight, removeFirstPlace }: Props) => {
+const Alternative = ({ alternative, isRight, removeFirstPlace, sounds }: Props) => {
   const [status, setStatus] = useState(Status.NEUTRAL);
 
   const clickHandler = () => {
     if (isRight) {
       setStatus(Status.RIGHT);
+      sounds.success?.play();
     } else {
       removeFirstPlace();
       setStatus(Status.WRONG);
+      sounds.fail?.play();
     }
   };
 
