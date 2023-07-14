@@ -51,7 +51,7 @@ const CompetitorCard = ({ name, setName, podium, competitor, competidorPosition 
       : "text-gray-300";
 
   return (
-    <div className="m-6 flex  rounded-lg bg-white shadow-lg">
+    <div className="my-2 mx-6 flex  rounded-lg bg-white shadow-lg">
       <div className="grid w-60 grid-cols-[theme(spacing.12)_1fr] gap-4 px-4 py-6 sm:w-72 lg:w-96">
         <TrophyIcon className={"h-12 w-12 " + textColor} />
         <div>

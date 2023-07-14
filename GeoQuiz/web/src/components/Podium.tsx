@@ -27,7 +27,7 @@ const Podium = ({ podium, restart }: Props) => {
   };
 
   return (
-    <div className="flex flex-col px-1 w-full">
+    <div className="flex flex-col px-1 min-h-[600px]">
       <h2 className="m-6 text-center text-2xl font-semibold uppercase text-gray-900">
         Classificação
       </h2>

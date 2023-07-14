@@ -1,6 +1,7 @@
 const buttonColors = {
   red: "bg-red-600 hover:bg-red-500 focus-visible:outline-red-600",
   blue: "bg-blue-600 hover:bg-blue-500 focus-visible:outline-blue-600",
+  green: "bg-green-600 hover:bg-green-500 focus-visible:outline-green-600",
 };
 
 interface Props<T extends React.ElementType> {

@@ -9,6 +9,9 @@ module.exports = {
       listStyleType: {
         latin: "lower-latin",
       },
+      spacing: {
+        128: "32rem",
+      },
     },
   },
   plugins: [],
